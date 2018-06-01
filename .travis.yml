@@ -1,0 +1,25 @@
+sudo: required
+
+language: minimal
+
+services:
+  - docker
+
+env:
+  global:
+    - PACKAGE_NAME: libgcrypt20
+    - BINTRAY_PROJECT: 9jkh/gnupg
+    # BINTRAY_USER
+    - secure: "rP5CvbQ8gz6SWmdQ2z8J4Gj111NGa9QEv4r0I5ZUGZDkcyJ/3m5SCv3LTThuZaQ83fj33qJWJL9VT9+W7O1Bz2rtt3TGtN+rz1nJI59GmzC3t24gHz8Be1dolLTQ6zkzBqnlufQ5GQ2szPufR40t8RggixjUDoP46yBl1s4PTCDNlHZaBqFZux1rZG9ubwtKlX5X4QMx9b9G6gmPJrinE93L4naxI2TbX86kYRWdLiuzMKBymb4ytBk7Y6CmsiPq/FSklTVqEZFU9pVuIgExRtIs88Q5KM3mrASSrSjhe3OXLCAzB72QUBXyFDxfwOM4z6y9SEvG91SsvqjyexV0TsIcd8E0oDoARaK8vQxSiSUPbA5vyMyYUM+zzl41I7LyatYhoHptMsF69gsEv3f5kymR1LL5COFw30ICrmwhD7XO/j3RJITEPp+FwFw/3nb79F2aAeOB3UpcwH5O3UbzxRA5e5vVhp/TSbw08cbtq7XgtX6M/KCpdErG6HQ/5ArH9ga0itnMI7D9ts0ni/TCRyo07WWszbwPFSwHyUd85Rlqgz40jBW1nfiJqwd0M8TX/dHWdtTRoXZBqgIbkC7LZnvfp91EN+YJrHT+Sr9dE2CfRpjQUzhYoAO1PWSIjMEpMCfPVHe+VA+E/p6h8OBcgRtKdm89atrITYNe02Vwo9Y="
+    # BINTRAY_API_KEY
+    - secure: "USxfD+un+EdzP0KyHpdkZ4uEvsMScLyvsmKu5TS73s4Bi0dF+zBmVf0J2l94HpMqd/Iw929CeFvWDJiunylx/a7Egl6o5zPa3YzI22itIee2icMCI4R3UBTzkBmaSVfqIDMwPcXWbt151ksKYdUiMINjN1RfcIAGYkiD8R8q1LfYE2lTuLrDVJGHhwakHaWEH9L751zKpwVkCwqA42c0n+xPFY7EtglG37tgaNICRWzLJkrN65vu4G+4GVba4eqKlD4J9iv5UKKBk3svZXQ49lklaH7zVYA1TmySRQhe4EmSsQtlqJv4vnKRx651s1kk6OXwx545Ak9E/m08saZ21/9f/Ajv7HsDUHF7+ih+mJqkGpTiDsxP0Ku9wJG24/sTuFrUKn3KGH8ArynHFX6b/AvX0ny3vrx3sSBYp4QQcTwEBlSJzH65a2J97lm4n6KgXTkJU6PVy3ynkJbrPwa6PDZQPSaltfatndBeRuXEqM3sRtirDMgI8hjhLSVq8vBNf1v6PnCzGyJ5n0qJwn1wtiDHocHZ8y/mXc0OOUdILD511WyvIRl6O7Oc1RZl+Hq3boHsz+eh/4DQwSNeS+OhV/LemxHES6bBDq74GNNGb5QT/GRRTX3wPdv52uDP5WVvzy/Uew1JSdelZglhYhcn6xk6KpSgGhlIORfdBMKZu6s="
+
+before_install:
+  - ./build.sh
+
+deploy:
+  provider: script
+  script: "./publish.sh"
+  skip_cleanup: true
+  on:
+    branch: master
