@@ -31,6 +31,7 @@ libgcrypt.so.20 libgcrypt20 #MINVER#
  gcry_err_make_from_errno@GCRYPT_1.6 1.7.0
  gcry_error_from_errno@GCRYPT_1.6 1.7.0
  gcry_free@GCRYPT_1.6 1.7.0
+ gcry_get_config@GCRYPT_1.6 1.8.2
  gcry_is_secure@GCRYPT_1.6 1.7.0
  gcry_kdf_derive@GCRYPT_1.6 1.7.0
  gcry_log_debug@GCRYPT_1.6 1.7.0
@@ -114,6 +115,7 @@ libgcrypt.so.20 libgcrypt20 #MINVER#
  gcry_mpi_mulm@GCRYPT_1.6 1.7.0
  gcry_mpi_neg@GCRYPT_1.6 1.7.0
  gcry_mpi_new@GCRYPT_1.6 1.7.0
+ gcry_mpi_point_copy@GCRYPT_1.6 1.8.2
  gcry_mpi_point_get@GCRYPT_1.6 1.7.0
  gcry_mpi_point_new@GCRYPT_1.6 1.7.0
  gcry_mpi_point_release@GCRYPT_1.6 1.7.0
